@@ -1,27 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import classes from './Header.module.css';
 
 const Header = (props) => {
-    
-    return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-            <a href="/tutorials" className="navbar-brand">
-                Home
-            </a>
-            <div className="navbar-nav mr-auto">
-                <li className="nav-item">
-                    <Link to={"/tutorials"} className="nav-link">
-                        Todos
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to={"/add"} className="nav-link">
-                        Add
-                    </Link>
-                </li>
-            </div>
-        </nav>
-    );
+  return (
+    <header className={classes.header}>
+      <div className={classes.logo}>Great Quotes</div>
+      <nav className={classes.nav}>
+        <ul>
+          <li>
+            <NavLink to='/quotes' activeClassName={classes.active}>
+              All Quotes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/new-quote' activeClassName={classes.active}>
+              Add Quotes
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;
