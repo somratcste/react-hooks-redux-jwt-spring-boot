@@ -28,7 +28,7 @@ const findByTitle = title => {
     return http.get(`/quotes?title=${title}`);
 };
 
-const QuoteService = {
+const QuoteDataService = {
     getAll,
     get,
     create,
@@ -38,4 +38,4 @@ const QuoteService = {
     findByTitle
 };
 
-export default QuoteService;
+export default QuoteDataService;
