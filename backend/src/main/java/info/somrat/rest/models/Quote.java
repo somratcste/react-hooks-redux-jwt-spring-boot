@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Todo {
+public class Quote {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +16,11 @@ public class Todo {
     private Long id;
 
     @Column(nullable = false, length = 89)
+    private String title;
+
+    @Column(nullable = false, length = 89)
     private String username;
 
     private String description;
     private Date targetDate;
-
-    @Column(columnDefinition = "boolean default false")
-    private boolean isDone;
 }

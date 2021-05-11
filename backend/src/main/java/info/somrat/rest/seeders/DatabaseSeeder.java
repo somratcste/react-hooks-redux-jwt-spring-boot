@@ -2,10 +2,10 @@ package info.somrat.rest.seeders;
 
 import info.somrat.rest.enums.ERole;
 import info.somrat.rest.models.Role;
-import info.somrat.rest.models.Todo;
+import info.somrat.rest.models.Quote;
 import info.somrat.rest.models.User;
 import info.somrat.rest.repository.RoleRepository;
-import info.somrat.rest.repository.TodoRepository;
+import info.somrat.rest.repository.QuoteRepository;
 import info.somrat.rest.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ public class DatabaseSeeder {
     RoleRepository roleRepository;
 
     @Autowired
-    TodoRepository todoRepository;
+    QuoteRepository quoteRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -49,12 +49,12 @@ public class DatabaseSeeder {
     }
 
     private void seedTodosTable() {
-        todoRepository.deleteAll();
-        Todo todo1 = new Todo(1L, "nazmul", "Learn React", new Date(), false);
-        Todo todo2 = new Todo(2L, "nazmul", "Learn Java", new Date(), true);
-        Todo todo3 = new Todo(3L, "nazmul", "Learn FullStack", new Date(), false);
-        todoRepository.saveAll(Arrays.asList(todo1, todo2, todo3));
-        logger.info("Todos role seeding ---------- " + todoRepository.count());
+        quoteRepository.deleteAll();
+        Quote quote1 = new Quote(1L,"Title 1",  "nazmul", "Learn React 1", new Date());
+        Quote quote2 = new Quote(2L,"Title 2",  "hossain", "Learn React 2", new Date());
+        Quote quote3 = new Quote(3L,"Title 3",  "gm", "Learn React 3", new Date());
+        quoteRepository.saveAll(Arrays.asList(quote1, quote2, quote3));
+        logger.info("Quotes are seeding ---------- " + quoteRepository.count());
     }
 
     private void seedUsersTable() {
