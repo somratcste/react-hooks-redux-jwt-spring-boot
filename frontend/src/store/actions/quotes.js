@@ -1,23 +1,22 @@
-import QuoteDataService from '../../services/QuoteDataService'
+import QuoteDataService from '../../services/QuoteDataService';
 import { quoteActions } from '../slices/QuoteSlice';
 
 export const createQuote = (quoteData) => async (dispatch) => {
     try {
         const response = await QuoteDataService.create(quoteData);
         dispatch(quoteActions.createQuote(response.data));
-
+        return Promise.resolve(response.data);
     } catch (error) {
-        console.log(error);
+        return Promise.reject(error);
     }
-}
+};
 
 export const getAllQuotes = () => async (dispatch) => {
     try {
-      const response = await QuoteDataService.getAll();
-      dispatch(quoteActions.retrieveQuotes(response.data));
-
+        const response = await QuoteDataService.getAll();
+        dispatch(quoteActions.retrieveQuotes(response.data));
+        return Promise.resolve(response.data);
     } catch (err) {
-      console.log(err);
+        return Promise.reject(err);
     }
 };
-  

@@ -9,7 +9,6 @@ const get = id => {
 };
 
 const create = (data) => {
-    console.log("data " + JSON.stringify(data));
     return http.post("/quotes/", JSON.stringify(data));
 };
 
