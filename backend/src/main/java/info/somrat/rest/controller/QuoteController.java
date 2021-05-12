@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/quotes")
 @CrossOrigin(origins = "*")
+@RequestMapping("/api/quotes")
 public class QuoteController {
 
     @Autowired

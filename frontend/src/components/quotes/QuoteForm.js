@@ -1,9 +1,9 @@
 import React from "react";
 
-const TodoForm = (props) => {
+const QuoteItem = (props) => {
     return (
-        <p>Todo Form</p>
+        <p>{props.quote.title}</p>
     )
 }
 
-export default TodoForm;
+export default QuoteItem;

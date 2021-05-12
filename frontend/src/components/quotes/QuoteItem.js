@@ -1,7 +1,9 @@
-const TodoItem = (props) => {
+import React from "react";
+
+const QuoteItem = (props) => {
     return (
-        <p>Todo Item</p>
+        <p>{props.quote.title}</p>
     )
 }
 
-export default TodoItem;
+export default QuoteItem;

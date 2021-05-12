@@ -1,7 +1,7 @@
 import http from '../http-common';
 
 const getAll = () => {
-    return http.get("/quotes");
+    return http.get("/quotes/");
 };
 
 const get = id => {
@@ -9,7 +9,7 @@ const get = id => {
 };
 
 const create = data => {
-    return http.post("/quotes", data);
+    return http.post("/quotes/", data);
 };
 
 const update = (id, data) => {

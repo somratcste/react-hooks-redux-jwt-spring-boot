@@ -1,4 +1,5 @@
 import QuoteDataService from '../../services/QuoteDataService'
+import quoteSlice, { quoteActions } from '../slices/QuoteSlice';
 
 export const createQuote = (title, author, description) => async (dispatch) => {
     try {
@@ -13,6 +14,7 @@ export const createQuote = (title, author, description) => async (dispatch) => {
 export const getAllQuotes = () => async (dispatch) => {
     try {
       const response = await QuoteDataService.getAll();
+      dispatch(quoteActions.retrieveQuotes(response.data));
       console.log(response.data);
 
     } catch (err) {

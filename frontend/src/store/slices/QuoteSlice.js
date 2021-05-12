@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import QuoteDataService from "../../services/QuoteDataService";
 
 const quoteSlice = createSlice({
     name: 'quote',
@@ -8,7 +7,7 @@ const quoteSlice = createSlice({
     },
     reducers: {
         retrieveQuotes(state, action) {
-            return action.payload;
+            state.items = action.payload;
         }
     }
 });

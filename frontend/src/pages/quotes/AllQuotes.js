@@ -1,8 +1,28 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import QuoteItem from '../../components/quotes/QuoteForm';
+import { getAllQuotes } from '../../store/actions/quotes';
 
 const AllQuotes = () => {
+    const quotes = useSelector((state) => state.quote.items);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllQuotes());
+    }, []);
+
     return (
-        <p>AllQuotes</p>
+        <>
+            {
+                quotes && quotes.map((quote) => (
+                <QuoteItem 
+                    key={quote.id}
+                    quote={quote}
+                />
+                ))
+            }
+        </>
     );
 };
 
