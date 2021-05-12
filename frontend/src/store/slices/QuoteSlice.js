@@ -8,6 +8,9 @@ const quoteSlice = createSlice({
     reducers: {
         retrieveQuotes(state, action) {
             state.items = action.payload;
+        },
+        createQuote(state, action) {
+            state.items.unshift(action.payload);
         }
     }
 });

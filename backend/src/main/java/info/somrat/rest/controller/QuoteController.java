@@ -20,7 +20,7 @@ public class QuoteController {
     }
 
     @PostMapping("/")
-    public Quote update(@RequestBody Quote quote) {
+    public Quote create(@RequestBody Quote quote) {
         return quoteService.save(quote);
     }
 

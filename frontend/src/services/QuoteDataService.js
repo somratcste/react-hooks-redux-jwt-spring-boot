@@ -8,8 +8,9 @@ const get = id => {
     return http.get(`/quotes/${id}`);
 };
 
-const create = data => {
-    return http.post("/quotes/", data);
+const create = (data) => {
+    console.log("data " + JSON.stringify(data));
+    return http.post("/quotes/", JSON.stringify(data));
 };
 
 const update = (id, data) => {

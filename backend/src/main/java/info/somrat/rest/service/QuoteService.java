@@ -13,7 +13,7 @@ public class QuoteService {
     QuoteRepository quoteRepository;
 
     public List<Quote> index() {
-        return quoteRepository.findAll();
+        return quoteRepository.findAllByOrderByIdDesc();
     }
 
     public Quote show(Long id) {

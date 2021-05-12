@@ -9,6 +9,7 @@ const QuoteList = (props) => {
             <ul className={classes.list}>
                 {props.quotes.map((quote) => (
                     <QuoteItem
+                        key={quote.id}
                         id={quote.id}
                         quote={quote}
                     />
