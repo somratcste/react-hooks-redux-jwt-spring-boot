@@ -50,9 +50,9 @@ public class DatabaseSeeder {
 
     private void seedTodosTable() {
         quoteRepository.deleteAll();
-        Quote quote1 = new Quote(1L,"Title 1",  "nazmul", "Learn React 1", new Date());
-        Quote quote2 = new Quote(2L,"Title 2",  "hossain", "Learn React 2", new Date());
-        Quote quote3 = new Quote(3L,"Title 3",  "gm", "Learn React 3", new Date());
+        Quote quote1 = new Quote(1L,"Title 1",  "nazmul", "Learn React 1");
+        Quote quote2 = new Quote(2L,"Title 2",  "hossain", "Learn React 2");
+        Quote quote3 = new Quote(3L,"Title 3",  "gm", "Learn React 3");
         quoteRepository.saveAll(Arrays.asList(quote1, quote2, quote3));
         logger.info("Quotes are seeding ---------- " + quoteRepository.count());
     }

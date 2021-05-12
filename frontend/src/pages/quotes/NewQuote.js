@@ -1,9 +1,10 @@
 import React from "react";
+import QuoteForm from "../../components/quotes/QuoteForm";
 
 const NewQuote = (props) => {
 
     return (
-        <p>NewQuote</p>
+        <QuoteForm />
     )
 
 }

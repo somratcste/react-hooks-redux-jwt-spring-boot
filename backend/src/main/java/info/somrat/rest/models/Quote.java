@@ -22,5 +22,4 @@ public class Quote {
     private String username;
 
     private String description;
-    private Date targetDate;
 }

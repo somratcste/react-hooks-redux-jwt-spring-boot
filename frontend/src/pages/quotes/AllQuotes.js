@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import QuoteItem from '../../components/quotes/QuoteItem';
+import QuoteList from '../../components/quotes/QuoteList';
 import { getAllQuotes } from '../../store/actions/quotes';
 
 const AllQuotes = () => {
@@ -14,14 +14,7 @@ const AllQuotes = () => {
 
     return (
         <>
-            {
-                quotes && quotes.map((quote) => (
-                <QuoteItem 
-                    key={quote.id}
-                    quote={quote}
-                />
-                ))
-            }
+            <QuoteList quotes={quotes} />
         </>
     );
 };

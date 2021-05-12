@@ -30,7 +30,6 @@ public class QuoteService {
         System.out.print(quote.toString());
         Quote quoteFromDb = quoteRepository.findOneById(id);
         quoteFromDb.setDescription(quote.getDescription());
-        quoteFromDb.setTargetDate(quote.getTargetDate());
         quoteFromDb.setUsername("nazmul");
         return quoteRepository.save(quoteFromDb);
     }
