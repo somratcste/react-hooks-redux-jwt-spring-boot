@@ -1,9 +1,9 @@
 import React from "react";
 
-const QuoteItem = (props) => {
+const QuoteForm = (props) => {
     return (
         <p>{props.quote.title}</p>
     )
 }
 
-export default QuoteItem;
+export default QuoteForm;

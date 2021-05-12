@@ -1,5 +1,5 @@
 import QuoteDataService from '../../services/QuoteDataService'
-import quoteSlice, { quoteActions } from '../slices/QuoteSlice';
+import { quoteActions } from '../slices/QuoteSlice';
 
 export const createQuote = (title, author, description) => async (dispatch) => {
     try {
