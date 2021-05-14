@@ -30,3 +30,12 @@ export const getQuote = (id) => async (dispatch) => {
         return Promise.reject(err);
     }
 };
+
+export const removeQuote = (id) => async (dispatch) => {
+    try {
+        await QuoteDataService.remove(id);
+        dispatch(quoteActions.removeQuote(id));
+    } catch (err) {
+        return Promise.reject(err);
+    }
+};

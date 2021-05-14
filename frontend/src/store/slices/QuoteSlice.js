@@ -18,6 +18,10 @@ const quoteSlice = createSlice({
         },
         setQuote(state, action) {
             state.currentItem = {};
+        },
+        removeQuote(state, action) {
+            const id = action.payload;
+            state.items = state.items.filter(item => item.id !== id);
         }
     }
 });
