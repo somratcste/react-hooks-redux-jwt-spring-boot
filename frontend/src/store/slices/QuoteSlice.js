@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const quoteSlice = createSlice({
     name: 'quote',
     initialState: {
-        items: []
+        items: [],
+        currentItem: {}
     },
     reducers: {
         retrieveQuotes(state, action) {
@@ -11,6 +12,12 @@ const quoteSlice = createSlice({
         },
         createQuote(state, action) {
             state.items.unshift(action.payload);
+        },
+        getQuote(state, action) {
+            state.currentItem = action.payload;
+        },
+        setQuote(state, action) {
+            state.currentItem = {};
         }
     }
 });

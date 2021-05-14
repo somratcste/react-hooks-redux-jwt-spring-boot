@@ -20,3 +20,13 @@ export const getAllQuotes = () => async (dispatch) => {
         return Promise.reject(err);
     }
 };
+
+export const getQuote = (id) => async (dispatch) => {
+    try {
+        const response = await QuoteDataService.get(id);
+        dispatch(quoteActions.getQuote(response.data));
+        return Promise.resolve(response.data);
+    } catch (err) {
+        return Promise.reject(err);
+    }
+};

@@ -17,7 +17,7 @@ function App() {
                 </Route>
                 <Route exact path="/quotes" component={AllQuotes} />
                 <Route exact path="/new-quote" component={NewQuote} />
-                <Route exact path="/todos/:id" component={QuoteDetail} />
+                <Route exact path="/quotes/:quoteId" component={QuoteDetail} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </Layout>
